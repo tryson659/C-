@@ -13,6 +13,8 @@ namespace zcs {
     class InetAddress{
         public:
             InetAddress(const string& ip,unsigned short port);//用于ip和端口初始化
+            InetAddress(unsigned short port);
+            InetAddress(const struct sockaddr_in & addr);
             struct sockaddr_in * getInetAddress();//获取封装好的结构体指针
             string getIp() const;
             unsigned short getPort() const;
